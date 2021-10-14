@@ -1,0 +1,23 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Create Test{% endblock %}
+{% block content %}
+{% load static %}
+
+{% if messages %}
+	{% for m in messages %}
+		<div>
+			<strong>{{m|safe}}</strong>
+		</div>
+	{% endfor %}
+{% endif %}
+
+<div class="container">
+	<form method="post" action="{% url 'createtest' fid %}">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit">
+	</form>
+	<a href="{% url 'fhome' fid %}" class="btn btn-outline-primary">Back</a>
+
+</div>
+{% endblock %}

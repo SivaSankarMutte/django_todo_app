@@ -1,0 +1,22 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Faculty Home{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container mt-5">
+	<div class="jumbotron bg-dark">
+
+		<div class="jumbotron bg-info">
+			<a href="{% url 'createtest' facid %}" class="badge badge-danger"><h4>Create Test</h4></a>
+		</div>
+
+		<div class="jumbotron bg-success">
+			<a href="{% url 'modifytest' facid %}" class="badge badge-danger"><h4>Modify Tests</h4></a>
+		</div>
+
+		<div class="jumbotron bg-warning">
+			<a href="{% url 'results' facid %}" class="badge badge-danger"><h4>Results</h4></a>
+		</div>
+
+	</div>
+</div>
+{% endblock %}

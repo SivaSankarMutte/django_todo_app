@@ -1,0 +1,7 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Invalid Credentials{% endblock %}
+{% block content %}
+{% load static %}
+	<h1>Invalid User</h1>
+	<a href="{% url 'flogin' %}">Try Again!</a>
+{% endblock %}

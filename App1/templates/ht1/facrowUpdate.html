@@ -1,0 +1,23 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Faculty Login{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container">
+	<div class="jumbotron bg-info">
+		{% if messages %}
+		{% for m in messages %}
+		<div class="alert alert-{{m.tags}} alert-dismissible" id="dismiss">
+			<div>{{m}}</div>
+		  <a href="#" class="close" data-dismiss="alert" id="x" aria-label="close">&times;</a>
+		</div>
+		{% endfor %}
+		{% endif %}
+		<form action="{% url 'facrowUpdate' row.id %}" method="post">
+			{% csrf_token %}
+			<input type="email" name="email" class="form-control" value="{{row.email}}">
+			<input type="password" name="psw" class="form-control" value="{{row.psw}}">
+			<input type="submit" class="btn btn-success form-control">
+		</form>
+	</div>
+</div>
+{% endblock %}

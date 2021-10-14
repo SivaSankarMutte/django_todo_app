@@ -1,0 +1,13 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Zero Questions{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="container mt-5">
+	<div class="jumbotron m-5">
+		<h1>Oops! No questions were added</h1>
+		<a href="{% url 'home' %}">Home Page</a>
+	</div>
+</div>
+
+{% endblock %}

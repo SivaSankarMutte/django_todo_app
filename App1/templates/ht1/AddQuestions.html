@@ -1,0 +1,27 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Adding Questions{% endblock %}
+{% block content %}
+{% load static %}
+ 
+<div class="container">
+	<div class="jumbotron">
+		{% if messages %}
+		{% for m in messages %}
+		<div class="alert alert-{{m.tags}} alert-dismissible" id="dismiss">
+			<div>{{m}}</div>
+		  <a href="#" class="close" data-dismiss="alert" id="x" aria-label="close">&times;</a>
+		</div>
+		{% endfor %}
+		{% endif %}
+
+
+		<form method="post" action="{% url 'AddQuestions' fid eid k %}">
+			{% csrf_token %}
+			{{form.as_p}}
+			<input type="submit">
+		</form>
+		
+	</div>
+</div>
+
+{% endblock %}

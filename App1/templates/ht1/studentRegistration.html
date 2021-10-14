@@ -1,0 +1,14 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Students Registration{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="container">
+	<form method="post" action="{% url 'StudRegistration' %}">
+		{% csrf_token %}
+		{{form.as_p}}
+		<input type="submit">
+	</form>
+</div>
+
+{% endblock %}

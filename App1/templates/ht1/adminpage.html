@@ -1,0 +1,24 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Faculty Login{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container">
+	<div class="jumbotron bg-info">
+		{% if messages %}
+		{% for m in messages %}
+		<div class="alert alert-{{m.tags}} alert-dismissible" id="dismiss">
+			<div>{{m}}</div>
+		  <a href="#" class="close" data-dismiss="alert" id="x" aria-label="close">&times;</a>
+		</div>
+		{% endfor %}
+		{% endif %}
+		<h1>Hello, Admin</h1>
+		<form>
+			{% csrf_token %}
+			<a href="{% url 'viewFaculty' %}" class="btn btn-success">VIEW ALL FACULTY</a>
+			<a href="{% url 'facultyupload' %}" class="btn btn-primary">UPLOAD NEW FACULTY</a>
+			<a href="{% url 'facultyModify' %}" class="btn btn-danger">MODIFY FACULTY ROWS</a>
+		</form>
+	</div>
+</div>
+{% endblock %}

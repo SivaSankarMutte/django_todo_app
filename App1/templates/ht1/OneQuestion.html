@@ -1,0 +1,33 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Exam{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="container mt-5">
+	<div class="jumbotron m-5">
+		<form method="post" action="{% url 'OneQuestion' i %}">
+			{% csrf_token %}
+			<div class="jumbotron">
+				<div class="form-group">
+					<h5>{{q.Question}}</h5>
+					<input type="radio" class="form-control-radio" value="{{q.opt1}}" id="{{q.opt1}}" name="{{q.Question}}">
+					<label for="{{q.opt1}}">{{q.opt1}}</label><br>
+
+					<input type="radio" class="form-control-radio" value="{{q.opt2}}" id="{{q.opt2}}" name="{{q.Question}}">
+					<label for="{{q.opt2}}">{{q.opt2}}</label><br> 
+
+					<input type="radio" class="form-control-radio" value="{{q.opt3}}" id="{{q.opt3}}" name="{{q.Question}}">
+					<label for="{{q.opt3}}">{{q.opt3}}</label><br>
+
+					<input type="radio" class="form-control-radio" value="{{q.opt4}}" id="{{q.opt4}}" name="{{q.Question}}">
+					<label for="{{q.opt4}}">{{q.opt4}}</label><br>
+				</div>
+			</div>
+			<center>
+				<input type="submit" value="Submit" class="btn btn-primary">
+			</center>
+		</form>
+	</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Test Modification{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="container mt-5">
+	<div class="jumbotron m-5">
+		<form method="post" action="{% url 'specificTestModify' eid %}">
+			{% csrf_token %}
+			{% for i in form %}
+			<div class="card">
+				<input type="text" name="{{i.Question}}" value="{{i.Question}}" class="form-control">
+				<input type="text" name="{{i.opt1}}" value="{{i.opt1}}" class="form-control">
+				<input type="text" name="{{i.opt2}}" value="{{i.opt2}}" class="form-control">
+				<input type="text" name="{{i.opt3}}" value="{{i.opt3}}" class="form-control">
+				<input type="text" name="{{i.opt4}}" value="{{i.opt4}}" class="form-control">
+				<input type="text" name="{{i.ans}}" value="{{i.ans}}" class="form-control">
+			</div>
+			<br>
+			{% endfor %}
+			<input type="submit" value="Modify" class="btn btn-warning">
+		</form>
+	</div>
+</div>
+
+{% endblock %}

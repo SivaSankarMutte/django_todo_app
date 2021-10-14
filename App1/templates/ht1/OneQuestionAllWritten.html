@@ -1,0 +1,13 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Test Submitted{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container mt-4">
+	<div class="card col-md-8 mx-auto shadow-lg">
+		<div class="card-body">
+			<h1>Submitted Successfully</h1>
+			<a href="{% url 'home' %}">Home Page</a>
+		</div>
+	</div>
+</div>
+{% endblock %}

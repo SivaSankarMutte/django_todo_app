@@ -1,0 +1,31 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Faculty Modification{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container">
+	<div class="jumbotron bg-info">
+		{% if messages %}
+		{% for m in messages %}
+		<div class="alert alert-{{m.tags}} alert-dismissible" id="dismiss">
+			<div>{{m}}</div>
+		  <a href="#" class="close" data-dismiss="alert" id="x" aria-label="close">&times;</a>
+		</div>
+		{% endfor %}
+		{% endif %}
+
+
+		{% for i in facrows %}
+		<div class="card">
+			<span>
+				<h4>{{i.email}}</h4>
+				<a href="{% url 'facrowUpdate' i.id %}" class="btn btn-warning">UPDATE</a>
+				<a href="{% url 'facrowDelete' i.id %}" class="btn btn-danger">DELETE</a>
+			</span>
+		</div>
+		<br>
+		{% endfor %}
+
+
+	</div>
+</div>
+{% endblock %}

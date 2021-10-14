@@ -1,0 +1,24 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Students Upload{% endblock %}
+{% block content %}
+{% load static %}
+
+{% if messages %}
+	{% for m in messages %} 
+		<div>
+			<strong>{{m|safe}}</strong>
+		</div>
+	{% endfor %}
+{% endif %}
+<div class="container">
+	<div class="jumbotron">
+		<form method="post" enctype="multipart/form-data" action="{% url 'studentsupload' fid examform.id %}">
+			{% csrf_token %}
+			<label>Upload a File</label>
+			<input type="file" name="file">
+			<p>Accepts only CSV Files</p>
+			<button type="submit" class="btn btn-outline-success">UPLOAD</button>
+		</form>
+	</div>
+</div>
+{% endblock %}

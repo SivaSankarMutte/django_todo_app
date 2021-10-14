@@ -1,0 +1,22 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Test Modifications{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container mt-4">
+	<div class="card col-md-8 mx-auto shadow-lg">
+		<div class="card-body">
+			<h3 class="text-center">Created Tests</h3>
+			<table class="table table-border table-hover">
+				{% for i in tests %}
+				<tr>
+					<td><h4>{{i.examName}}</h4></td>
+					<td><a href="{% url 'specificTestModify' i.id %}" class="btn btn-outline-warning">Modify</a></td> 
+					<td><a href="{% url 'specificTestDelete' i.id %}" class="btn btn-outline-danger">Delete</a></td>
+				</tr>
+				{% endfor %}
+			</table>
+			<a href="{% url 'fhome' fid %}" class="btn btn-outline-primary">Back</a>
+		</div>
+	</div>
+</div>
+{% endblock %}

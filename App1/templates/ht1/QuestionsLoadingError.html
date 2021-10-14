@@ -1,0 +1,14 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Questions Loading Error{% endblock %}
+{% block content %}
+{% load static %}
+
+<div class="container mt-5">
+	<div class="jumbotron m-5">
+		<h3>Questions Loading Error</h3>
+		<p>Please, Re-Login and Try again!</p>
+		<a href="{% url 'home' %}">Click Here!</a> and Login Again
+	</div>
+</div>
+
+{% endblock %}

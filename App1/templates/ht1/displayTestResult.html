@@ -1,0 +1,33 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Test Results{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container mt-4">
+	<div class="card col-md-8 mx-auto shadow-lg">
+		<div class="card-body">
+			<h3 class="text-center">{{ExamRow.examName}} Results</h3>
+			<table class="table table-border table-hover">
+				<tr class="bg-dark text-light">
+					<th>Student Email</th>
+					<th>Marks Obtained</th>
+					<th>Total Marks</th>
+				</tr>
+				{% for i in rows %}
+				<tr>
+					<td>{{i.semail}}</td>
+					<td>{{i.marks_scored}}</td> 
+					<td>{{total}}</td>
+				</tr>
+				{% endfor %}
+			</table>
+			<center>
+				<a href="{% url 'downloadResults' eid %}" class="btn btn-outline-success">Download</a>
+				<a href="{% url 'results' fid %}" class="btn btn-outline-primary">&nbsp;&nbsp;&nbsp;&nbsp;Back&nbsp;&nbsp;&nbsp;&nbsp;</a>
+			</center>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
+
+

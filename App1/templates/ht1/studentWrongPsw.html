@@ -1,0 +1,7 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Incorrect Password{% endblock %}
+{% block content %}
+{% load static %}
+	<h1>Incorrect Password</h1>
+	<a href="{% url 'slogin' %}">Try Again!</a>
+{% endblock %}

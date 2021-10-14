@@ -1,0 +1,15 @@
+{% extends 'ht1/base.html' %}
+{% block title %}Student Login{% endblock %}
+{% block content %}
+{% load static %}
+<div class="container">
+	<div class="jumbotron bg-info">
+		<form action="{% url 'slogin' %}" method="post">
+			{% csrf_token %}
+			<input type="email" name="semail" class="form-control" placeholder="Enter your email">
+			<input type="password" name="spsw" class="form-control" placeholder="Enter Password">
+			<input type="submit" class="btn btn-success form-control">
+		</form>
+	</div>
+</div>
+{% endblock %}
